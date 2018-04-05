@@ -1,3 +1,0 @@
-git add *.cpp *.hpp
-git commit
-git push https://github.com/bogkra/modern_cpp
