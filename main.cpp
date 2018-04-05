@@ -40,7 +40,7 @@ bool areaLessThan10(Shape* s)
 
 void printCollectionElements(const Collection& collection)
 {
-    for(auto element : collection)
+    for(const auto element : collection)
     {
         if(element != nullptr)
         {
@@ -51,7 +51,7 @@ void printCollectionElements(const Collection& collection)
 
 void printAreas(const Collection& collection)
 {
-    for(auto element : collection)
+    for(const auto element : collection)
     {
         if(element != nullptr)
         {
