@@ -10,6 +10,7 @@ public:
     double getArea() const;
     double getPerimeter() const;
     double getRadius() const;
+    double getPi();
     void print() const;
     Circle()=delete; // doesn't allow to call default constructor
 
