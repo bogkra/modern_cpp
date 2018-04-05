@@ -9,11 +9,11 @@ public:
     Rectangle(const Rectangle & other) = default;
     Rectangle() = delete;
 
-    double getArea() const;
-    double getPerimeter() const;
+    double getArea() const override;
+    double getPerimeter() const override;
     double getX() const;
     double getY() const;
-    void print() const;
+    void print() const override;
 
 private:
     double x_;
