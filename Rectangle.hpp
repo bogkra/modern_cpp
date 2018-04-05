@@ -5,7 +5,7 @@
 class Rectangle : public Shape
 {
 public:
-    Rectangle(double x, double y);
+    Rectangle(double x, double y) noexcept;
     Rectangle(const Rectangle & other) = default;
     Rectangle() = delete;
 

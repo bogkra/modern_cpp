@@ -3,8 +3,9 @@
 #include <iostream>
 
 Circle::Circle(double r)
-    : r_(r)
-{}
+{
+  r_ = std::move(r);
+}
 
 
 double Circle::getArea() const
@@ -29,7 +30,7 @@ void Circle::print() const
               << "     perimeter: " << getPerimeter() << std::endl;
 }
 
-[[deprecated("Use M_PI")]]
+[[deprecated("se M_PI")]]
 double Circle::getPi()
 {
    return 3.1415;

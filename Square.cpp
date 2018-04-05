@@ -1,8 +1,8 @@
 #include "Square.hpp"
 #include <iostream>
 
-Square::Square(double x)
-    : Rectangle(x, x)
+Square::Square(double x) 
+    : Rectangle(std::move(x), std::move(x)) 
 {}
 
 
