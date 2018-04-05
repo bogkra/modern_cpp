@@ -64,7 +64,7 @@ void findFirstShapeMatchingPredicate(const Collection& collection,
                                      bool (*predicate)(Shape* s),
                                      std::string info)
 {
-    auto iter = std::find_if(collection.begin(), collection.end(), predicate);
+    Collection::const_iterator iter = std::find_if(collection.begin(), collection.end(), predicate);
     if(*iter != nullptr)
     {
         cout << "First shape matching predicate: " << info << endl;
