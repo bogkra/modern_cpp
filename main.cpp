@@ -83,8 +83,7 @@ constexpr int fibonacci(const int n)
 
 int main()
 {
-    cout << fibonacci(45) << "    ";
-
+    cout << fibonacci(45) << "    " << alignof(Circle) << endl;
     Collection shapes;
     shapes.push_back(new Circle(2.0));
     shapes.push_back(new Circle(3.0));
