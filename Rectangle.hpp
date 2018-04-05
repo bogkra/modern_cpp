@@ -9,8 +9,8 @@ public:
     Rectangle(const Rectangle & other) = default;
     Rectangle() = delete;
 
-    double getArea() const override;
-    double getPerimeter() const override;
+    double getArea() const noexcept override;
+    double getPerimeter() const noexcept override;
     double getX() const;
     double getY() const;
     void print() const override;
