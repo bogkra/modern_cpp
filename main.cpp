@@ -76,8 +76,15 @@ void findFirstShapeMatchingPredicate(const Collection& collection,
     }
 }
 
+constexpr int fibonacci(const int n)
+{
+    return n < 3 ? 1 : fibonacci(n-2) + fibonacci(n-1);
+}
+
 int main()
 {
+    cout << fibonacci(45) << "    ";
+
     Collection shapes;
     shapes.push_back(new Circle(2.0));
     shapes.push_back(new Circle(3.0));
