@@ -93,8 +93,11 @@ int main()
                      std::make_shared<Circle>(4.0), 
                      std::make_shared<Rectangle>(10.0, 5.0), 
                      std::make_shared<Square>(3.0), 
-                     std::make_shared<Circle>(4.0)
+                     std::make_shared<Circle>(4.7)
     };
+
+    std::unique_ptr<Circle> uniqueCircle;
+    shapes.push_back(move(uniqueCircle));
 
     printCollectionElements(shapes);
 
