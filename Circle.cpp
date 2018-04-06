@@ -30,7 +30,7 @@ void Circle::print() const
               << "     perimeter: " << getPerimeter() << std::endl;
 }
 
-[[deprecated("se M_PI")]]
+[[deprecated("Use M_PI")]]
 double Circle::getPi()
 {
    return 3.1415;
