@@ -12,32 +12,6 @@ using namespace std;
 
 using Collection = vector<shared_ptr<Shape>>;
 
-bool sortByArea(shared_ptr<Shape> first, shared_ptr<Shape> second)
-{
-    if(first == nullptr || second == nullptr)
-    {
-        return false;
-    }
-    return (first->getArea() < second->getArea());
-}
-
-bool perimeterBiggerThan20(shared_ptr<Shape> s)
-{
-    if(s)
-    {
-        return (s->getPerimeter() > 20);
-    }
-    return false;
-}
-
-bool areaLessThan10(shared_ptr<Shape> s)
-{
-    if(s)
-    {
-        return (s->getArea() < 10);
-    }
-    return false;
-}
 
 void printCollectionElements(const Collection& collection)
 {
@@ -105,7 +79,13 @@ int main()
     cout << "Areas before sort: " << std::endl;
     printAreas(shapes);
 
-    std::sort(shapes.begin(), shapes.end(), sortByArea);
+    std::sort(shapes.begin(), shapes.end(), [](shared_ptr<Shape> first, shared_ptr<Shape> second)
+      {
+        if(first == nullptr || second == nullptr)
+           return false;
+        return (first->getArea() < second->getArea());
+      }
+    );
 
     cout << "Areas after sort: " << std::endl;
     printAreas(shapes);
@@ -113,8 +93,23 @@ int main()
     auto square = std::make_shared<Square>(4.0);
     shapes.push_back(square);
 
-    findFirstShapeMatchingPredicate(shapes, perimeterBiggerThan20, "perimeter bigger than 20");
-    findFirstShapeMatchingPredicate(shapes, areaLessThan10, "area less than 10");
+    findFirstShapeMatchingPredicate(shapes,  [](shared_ptr<Shape> s)
+      {
+        if(s)
+           return (s->getPerimeter() > 20);
+        return false;
+      }
+      , "perimeter bigger than 20"
+    );
+
+    findFirstShapeMatchingPredicate(shapes, [](shared_ptr<Shape> s)
+      {
+        if(s)
+          return (s->getArea() < 10);
+        return false;
+      }
+      , "area less than 10"
+    );
 
     return 0;
 }
