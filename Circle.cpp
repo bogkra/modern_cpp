@@ -2,9 +2,10 @@
 #include <math.h>
 #include <iostream>
 
-Circle::Circle(double r)
+Circle::Circle(double r, Color c)
 {
   r_ = std::move(r);
+  color = c;
 }
 
 
@@ -27,7 +28,8 @@ void Circle::print() const
 {
     std::cout << "Circle: radius: " << getRadius() << std::endl
               << "          area: " << getArea() << std::endl
-              << "     perimeter: " << getPerimeter() << std::endl;
+              << "     perimeter: " << getPerimeter() << std::endl
+              << "         color: " << strColor(color) << std::endl;
 }
 
 [[deprecated("Use M_PI")]]

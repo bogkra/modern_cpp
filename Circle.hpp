@@ -5,7 +5,7 @@
 class alignas(2) Circle final : public Shape 
 {
 public:
-    Circle(double r);
+    Circle(double r, Color c = BLUE);
     Circle(const Circle & other) = default;
     double getArea() const;
     double getPerimeter() const;

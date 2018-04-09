@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 
 enum Color
 {
@@ -7,6 +7,8 @@ enum Color
   GREEN,
   BLUE
 };
+
+std::string strColor(const Color c);
 
 class Shape
 {
